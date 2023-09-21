@@ -3,11 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css" />
     <title>Document</title>
   </head>
   <body>
-    <main><button onclick="ejecutarfuncion()" id="boton">INICIO</button></main>
-    <script src="./index.js"></script>
+    <header>
+      <div id="logo"><h1>Distribuidora Yerba Mate PS</h1></div>
+    </header>
+    <main>
+      <nav>
+        <h2>Productos:</h2>
+        <ul>
+          <li><button onclick="buscar()">Buscar</button></li>
+          <li>
+            <button onclick="listaProductos()">Lista de productos</button>
+          </li>
+          <li>
+            <button onclick="agregar()">Agregar Productos al carrito</button>
+          </li>
+          <li>
+            <button onclick="quitar()">Quitar productos del carrito</button>
+          </li>
+          <li>
+            <button onclick="listar()">
+              Listar los productos en el carrito
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <div id="img1"><img src="./assets/img/canarias.png" alt="" /></div>
+        <div id="img2"><img src="./assets/img/cbse.webp" alt="" /></div>
+        <div id="img3"><img src="./assets/img/chamigo.webp" alt="" /></div>
+        <div id="img4">
+          <img src="./assets/img/la unicon suave.webp" alt="" />
+        </div>
+        <div id="img5"><img src="./assets/img/mañanita.webp" alt="" /></div>
+        <div id="img6"><img src="./assets/img/playadito.webp" alt="" /></div>
+      </section>
+    </main>
+    <footer>footer</footer>
+    <script src="./js/carrito.js"></script>
   </body>
 </html>
