@@ -1,0 +1,118 @@
+header {
+  background-color: black;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  #logo {
+    flex-basis: 40%;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: $josefin;
+  }
+
+  #btnheader {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  #btnheader button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 9px;
+    font-size: 1em;
+  }
+
+  #contador {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  #divcarrito {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .divcarrito2 {
+      margin-left: 15px;
+      background-color: beige;
+      font-family: $robot;
+    }
+
+    .productoCarrito {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+   .offcanvas-header{
+    background-color: beige;
+    font-family: $josefin;
+   }
+
+    #carrito{
+      background-color: beige;
+    }
+
+    .productoCarrito img {
+      margin: 10px;
+      border: solid black 4px;
+      border-radius: 10px;
+    }
+
+    .productoCarrito h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px;
+      font-family: $robot;
+      font-weight: 400;
+      padding: 5px;
+      background-color: bisque;
+      border-radius: 10px;
+      border: solid black 2px;
+    }
+
+    .btnquitar {
+      text-decoration: none;
+      background-color: blue;
+      padding: 4px;
+      border-radius: 10px;
+      font-family: $robot;
+      border: solid 2px black;
+      color: azure;
+    }
+
+    .btnquitar:hover {
+      background-color: rgb(79, 79, 151);
+    }
+  }
+}

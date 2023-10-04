@@ -4,45 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estilos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <title>Yerba mate PS</title>
   </head>
   <body>
     <header>
-      <div id="logo"><h1>Distribuidora Yerba Mate PS</h1></div>
-    </header>
-    <main>
-      <nav>
-        <h2>Productos:</h2>
-        <ul>
-          <li><button onclick="buscar()">Buscar</button></li>
-          <li>
-            <button onclick="listaProductos()">Lista de productos</button>
-          </li>
-          <li>
-            <button onclick="agregar()">Agregar Productos al carrito</button>
-          </li>
-          <li>
-            <button onclick="quitar()">Quitar productos del carrito</button>
-          </li>
-          <li>
-            <button onclick="listar()">
-              Listar los productos en el carrito
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <section>
-        <div id="img1"><img src="./assets/img/canarias.png" alt="" /></div>
-        <div id="img2"><img src="./assets/img/cbse.webp" alt="" /></div>
-        <div id="img3"><img src="./assets/img/chamigo.webp" alt="" /></div>
-        <div id="img4">
-          <img src="./assets/img/la unicon suave.webp" alt="" />
+      <div id="logo">Distribuidora yerba mate PS</div>
+
+      <section id="btnheader">
+        <button>Logaut</button>
+      </section>
+
+      <div class="divcarrito1">
+        <h3 id="contador">
+          <span id="cantidadProductos">0</span>
+        </h3>
+      </div>
+
+      <div id="divcarrito">
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <img src="./assets/img/carrito.png" alt="" />
+
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+
+  
+
+          <div class="offcanvas-body" id="carrito">
+
+          </div>
+
+          <div class="divcarrito2">
+            <h3>Total: $<span id="totalcarrito">0</span></h3>
+          </div>
+
         </div>
-        <div id="img5"><img src="./assets/img/mañanita.webp" alt="" /></div>
-        <div id="img6"><img src="./assets/img/playadito.webp" alt="" /></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="section1">
+      </section>
+
+      <section id="section2">
       </section>
     </main>
-    <footer>footer</footer>
-    <script src="./js/carrito.js"></script>
+
+    <footer>
+      <div id="redessociales">
+        <a href="#" id="afooter1"
+          ><img src="./assets/img/iconos/facebook-color-svgrepo-com.svg" alt=""
+        /></a>
+        <a href="#"
+          ><img
+            src="./assets/img/iconos/instagram-2-1-logo-svgrepo-com.svg"
+            alt=""
+        /></a>
+      </div>
+
+      <aside id="aside">
+        <a href="#"
+          ><img
+            src="./assets/img/iconos/whatsapp-whats-app-svgrepo-com.svg"
+            alt=""
+        /></a>
+      </aside>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

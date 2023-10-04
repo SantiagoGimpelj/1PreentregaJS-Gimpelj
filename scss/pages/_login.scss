@@ -1,0 +1,71 @@
+#bodylogin {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas:
+    "headerlogin"
+    "mainlogin"
+    "footerlogin";
+
+  #headerlogin {
+    grid-area: headerlogin;
+  }
+  #mainlogin {
+    grid-area: mainlogin;
+    #sectionlogin{
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1em;
+    }
+    #sectionlogin h2{
+      text-align: center;
+      font-size: 2.5em;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    #sectionlogin p{
+      margin-top: 1.5em;
+    }
+    #sectionlogin p a{
+      text-decoration: none;
+      color: blue;
+    }
+    #loginform{
+      padding: 1.5em;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 500px;
+      border-radius: 20px;
+      border: solid 2px black;
+    }
+    #loginform label{
+      width: 100%;
+      padding: 0.2em;
+      margin-bottom: 0.5em;
+    }
+    #loginform input{
+      width: 100%;
+      margin-bottom: 1em;
+      padding: 0.8em;
+      border-radius: 9px;
+      border: none;
+      outline-color: blue;
+      background-color: beige;
+    }
+    #sumbit1{
+    margin-top: 1.5em;
+    color: rgb(0, 0, 0);
+    }
+    #sumbit1:hover{
+      background-color: blue;
+      color: white;
+    }
+  }
+  #footerlogin {
+    grid-area: footerlogin;
+  }
+}

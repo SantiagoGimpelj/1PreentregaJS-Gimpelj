@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@1,100&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto+Condensed:ital@1&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   margin: 0px;
@@ -10,113 +19,404 @@ body {
 header {
   background-color: black;
   grid-area: header;
-  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+header #logo {
+  flex-basis: 40%;
+  color: white;
+  font-size: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  font-family: "Josefin Sans", sans-serif;
 }
-header h1 {
-  font-size: 3rem;
-  text-align: center;
-  color: white;
-  margin-left: 30px;
-  padding: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 10px;
-}
-
-main {
-  grid-area: main;
-  height: 75vh;
-  display: flex;
-}
-main nav {
-  background-color: rgb(0, 0, 0);
-  flex-wrap: nowrap;
+header #btnheader {
+  flex-basis: 20%;
   display: flex;
   flex-direction: row;
-  flex-basis: 10%;
-  flex-direction: column;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
 }
-main nav h2 {
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: brown;
-  text-align: center;
+header #btnheader button {
+  background-color: blue;
   color: white;
-  margin-top: 50px;
-  border: 3px solid rgb(255, 255, 255);
-  border-radius: 10px;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 9px;
+  font-size: 1em;
 }
-main nav ul {
+header #contador {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+header #divcarrito {
+  flex-basis: 40%;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
 }
-main nav ul li {
-  margin-right: 20px;
-  flex-grow: 1;
-  list-style: none;
+header #divcarrito img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  position: relative;
+}
+header #divcarrito .divcarrito2 {
+  margin-left: 15px;
+  background-color: beige;
+  font-family: "Roboto Condensed", sans-serif;
+}
+header #divcarrito .productoCarrito {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main nav ul li button {
-  color: white;
-  border: solid 4px white;
-  background-color: brown;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+header #divcarrito .offcanvas-header {
+  background-color: beige;
+  font-family: "Josefin Sans", sans-serif;
+}
+header #divcarrito #carrito {
+  background-color: beige;
+}
+header #divcarrito .productoCarrito img {
+  margin: 10px;
+  border: solid black 4px;
   border-radius: 10px;
 }
-main nav ul li button:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  border: 4px solid brown;
-}
-main section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "img1 img3 img5" "img2 img4 img6";
-  justify-items: center;
+header #divcarrito .productoCarrito h2 {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-basis: 90%;
+  margin-top: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  padding: 5px;
+  background-color: bisque;
+  border-radius: 10px;
+  border: solid black 2px;
 }
-main section div img {
-  width: 300px;
-  height: 300px;
+header #divcarrito .btnquitar {
+  text-decoration: none;
+  background-color: blue;
+  padding: 4px;
+  border-radius: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  border: solid 2px black;
+  color: azure;
 }
-main section #img1 {
-  grid-area: img1;
+header #divcarrito .btnquitar:hover {
+  background-color: rgb(79, 79, 151);
 }
-main section #img2 {
-  grid-area: img2;
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("/assets/img/fondo/mate.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-main section #img3 {
-  grid-area: img3;
+main #section1 {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-main section #img4 {
-  grid-area: img4;
+main #section1 h3 {
+  margin-top: 5px;
+  font-size: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 800;
+  padding: 10px;
+  background-color: bisque;
+  border-radius: 10px;
+  border: solid black 3px;
 }
-main section #img5 {
-  grid-area: img5;
+main #section1 .btnAgregar {
+  background-color: rgb(0, 0, 243);
+  padding: 7px;
+  border-radius: 10px;
+  border: solid 3px black;
+  color: azure;
 }
-main section #img6 {
-  grid-area: img6;
+main #section1 .btnAgregar:hover {
+  background-color: rgb(79, 79, 151);
+}
+main #section1 .precio {
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  color: black;
+}
+main #section1 img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: solid black 4px;
+  border-radius: 10px;
+}
+main #section1 div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+main #section1 a {
+  margin-top: 10px;
+  text-decoration: none;
+  margin: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+main #section2 {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main #section2 h3 {
+  font-size: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-top: 5px;
+  font-weight: 800;
+  padding: 10px;
+  background-color: bisque;
+  border-radius: 10px;
+  border: solid black 3px;
+}
+main #section2 .btnAgregar2 {
+  background-color: blue;
+  padding: 7px;
+  border-radius: 10px;
+  border: solid 3px black;
+  color: azure;
+}
+main #section2 .btnAgregar2:hover {
+  background-color: rgb(79, 79, 151);
+}
+main #section2 .precio {
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Roboto Condensed", sans-serif;
+  color: black;
+}
+main #section2 img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: solid black 4px;
+  border-radius: 10px;
+}
+main #section2 div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+main #section2 a {
+  margin-top: 10px;
+  text-decoration: none;
+  margin: 10px;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 footer {
   grid-area: footer;
-  height: 10vh;
   background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+footer #redessociales img {
+  background-color: brown;
+  border: solid white 4px;
+  border-radius: 10px;
+  padding: 5px;
+  flex-basis: 90%;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer #redessociales {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer #redessociales #afooter1 {
+  margin-right: 40px;
+}
+footer #aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+}
+footer #aside img {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 70px;
+  height: 70px;
+  background-color: brown;
+  border: solid rgb(0, 0, 0) 4px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#bodylogin {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas: "headerlogin" "mainlogin" "footerlogin";
+}
+#bodylogin #headerlogin {
+  grid-area: headerlogin;
+}
+#bodylogin #mainlogin {
+  grid-area: mainlogin;
+}
+#bodylogin #mainlogin #sectionlogin {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+#bodylogin #mainlogin #sectionlogin h2 {
+  text-align: center;
+  font-size: 2.5em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+#bodylogin #mainlogin #sectionlogin p {
+  margin-top: 1.5em;
+}
+#bodylogin #mainlogin #sectionlogin p a {
+  text-decoration: none;
+  color: blue;
+}
+#bodylogin #mainlogin #loginform {
+  padding: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  border-radius: 20px;
+  border: solid 2px black;
+}
+#bodylogin #mainlogin #loginform label {
+  width: 100%;
+  padding: 0.2em;
+  margin-bottom: 0.5em;
+}
+#bodylogin #mainlogin #loginform input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border-radius: 9px;
+  border: none;
+  outline-color: blue;
+  background-color: beige;
+}
+#bodylogin #mainlogin #sumbit1 {
+  margin-top: 1.5em;
+  color: rgb(0, 0, 0);
+}
+#bodylogin #mainlogin #sumbit1:hover {
+  background-color: blue;
+  color: white;
+}
+#bodylogin #footerlogin {
+  grid-area: footerlogin;
+}
+
+#bodysignup {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas: "headersignup" "mainsignup" "footersignup";
+}
+#bodysignup #headersignup {
+  grid-area: headersignup;
+}
+#bodysignup #mainsignup {
+  grid-area: mainsignup;
+}
+#bodysignup #mainsignup #sectionsignup {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+#bodysignup #mainsignup #sectionsignup h2 {
+  text-align: center;
+  font-size: 2.5em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+#bodysignup #mainsignup #sectionsignup p {
+  margin-top: 1.5em;
+}
+#bodysignup #mainsignup #sectionsignup p a {
+  text-decoration: none;
+  color: blue;
+}
+#bodysignup #mainsignup #signupform {
+  padding: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  border-radius: 20px;
+  border: solid 2px black;
+}
+#bodysignup #mainsignup #signupform label {
+  width: 100%;
+  padding: 0.2em;
+  margin-bottom: 0.5em;
+}
+#bodysignup #mainsignup #signupform input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border-radius: 9px;
+  border: none;
+  outline-color: blue;
+  background-color: beige;
+}
+#bodysignup #mainsignup #sumbit2 {
+  color: black;
+}
+#bodysignup #mainsignup #sumbit2:hover {
+  background-color: blue;
+  color: white;
+}
+#bodysignup #footersignup {
+  grid-area: footersignup;
 }
 
 /*# sourceMappingURL=estilos.css.map */

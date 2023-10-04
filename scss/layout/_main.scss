@@ -1,0 +1,129 @@
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("/assets/img/fondo/mate.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  #section1 {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    h3 {
+      margin-top: 5px;
+      font-size: 2rem;
+      font-family: $robot;
+      font-weight: 800;
+      padding: 10px;
+      background-color: bisque;
+      border-radius: 10px;
+      border: solid black 3px;
+    }
+
+    .btnAgregar {
+      background-color: rgb(0, 0, 243);
+      padding: 7px;
+      border-radius: 10px;
+      border: solid 3px black;
+      color: azure;
+    }
+
+    .btnAgregar:hover{
+      background-color: rgb(79, 79, 151);
+    }
+
+    .precio{
+      font-weight: 700;
+      font-size: 2rem;
+      font-family: $robot;
+      color: black;
+    }
+  }
+
+  #section1 img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: solid black 4px;
+    border-radius: 10px;
+  }
+
+  #section1 div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #section1 a {
+    margin-top: 10px;
+    text-decoration: none;
+    margin: 10px;
+    font-family: $robot;
+  }
+
+  #section2 {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    h3 {
+      font-size: 2rem;
+      font-family: $robot;
+      margin-top: 5px;
+      font-weight: 800;
+      padding: 10px;
+      background-color: bisque;
+      border-radius: 10px;
+      border: solid black 3px;
+    }
+
+    .btnAgregar2 {
+      background-color: blue;
+      padding: 7px;
+      border-radius: 10px;
+      border: solid 3px black;
+      color: azure;
+    }
+
+    .btnAgregar2:hover{
+      background-color: rgb(79, 79, 151);
+    }
+
+    .precio{
+      font-weight: 700;
+      font-size: 2rem;
+      font-family: $robot;
+      color: black;
+    }
+  }
+
+  #section2 img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: solid black 4px;
+    border-radius: 10px;
+  }
+
+  #section2 div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #section2 a {
+    margin-top: 10px;
+    text-decoration: none;
+    margin: 10px;
+    font-family: $robot;
+  }
+}
