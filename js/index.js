@@ -15,7 +15,7 @@ class BaseDeDatos {
     this.productos = [];
     //cargar productos
     this.agregarProducto(1, "Yerba Playadito", 1978, "Yerba", "playadito.webp");
-    this.agregarProducto(2, "Yerba Mañanita", 1800, "Yerba", "Mañanita.webp");
+    this.agregarProducto(2, "Yerba Mañanita", 1800, "Yerba", "mañanita.webp");
     this.agregarProducto(
       3,
       "Yerba La Union Suave",
