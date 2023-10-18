@@ -2,26 +2,87 @@ main {
   grid-area: main;
   display: flex;
   flex-wrap: wrap;
-  background-image: url("/assets/img/fondo/mate.jpg");
-  background-size:cover;
+  background-image: url("../assets/img/fondo/mate.webp");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  #section1 {
-    flex-basis: 50%;
+  #categorias {
+    flex-basis: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    #listacategoria {
+      flex-grow: 1;
+      margin-top: 10px;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+
+      .boton.seleccionado{
+        border: 4px solid white;
+        background-color: #d15280;
+      }
+
+      .boton {
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 20px;
+        list-style: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(0, 0, 243);
+        border-radius: 10px;
+        border: solid 3px black;
+        color: azure;
+        a{
+          text-decoration: none;
+          color: white;
+          font-family: $josefin;
+        }
+      }
+    }
+  }
+
+  #buscador {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #inputbuscar {
+    text-align: center;
+    width: 500px;
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  #section1 {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 50px;
 
     h3 {
-      margin-top: 5px;
+      background-color: blue;
+      border: solid black 3px;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      color: white;
       font-size: 2rem;
       font-family: $robot;
       font-weight: 800;
-      padding: 10px;
-      background-color: bisque;
-      border-radius: 10px;
-      border: solid black 3px;
     }
 
     .btnAgregar {
@@ -32,24 +93,32 @@ main {
       color: azure;
     }
 
-    .btnAgregar:hover{
+    .btnAgregar:hover {
       background-color: rgb(79, 79, 151);
     }
 
-    .precio{
+    .precio {
       font-weight: 700;
       font-size: 2rem;
-      font-family: $robot;
-      color: black;
+      font-family: $josefin;
+      color: rgb(0, 0, 0);
+    }
+
+    .producto {
+      text-align: center;
+      width: 250px;
+      height: 52vh;
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 20px;
+      border: solid black 4px;
     }
   }
 
   #section1 img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
-    border: solid black 4px;
-    border-radius: 10px;
   }
 
   #section1 div {
@@ -68,20 +137,24 @@ main {
   }
 
   #section2 {
-    flex-basis: 50%;
+    flex-basis: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
 
     h3 {
+      background-color: blue;
+      border: solid black 3px;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      color: white;
       font-size: 2rem;
       font-family: $robot;
-      margin-top: 5px;
       font-weight: 800;
-      padding: 10px;
-      background-color: bisque;
-      border-radius: 10px;
-      border: solid black 3px;
     }
 
     .btnAgregar2 {
@@ -92,24 +165,30 @@ main {
       color: azure;
     }
 
-    .btnAgregar2:hover{
+    .btnAgregar2:hover {
       background-color: rgb(79, 79, 151);
     }
 
-    .precio{
+    .precio {
       font-weight: 700;
       font-size: 2rem;
-      font-family: $robot;
-      color: black;
+      font-family: $josefin;
+      color: rgb(0, 0, 0);
+    }
+
+    .producto {
+      width: 250px;
+      height: 52vh;
+      text-align: center;
+      background-color: white;
+      border-radius: 20px;
+      border: solid black 4px;
     }
   }
 
   #section2 img {
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border: solid black 4px;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
   }
 
   #section2 div {

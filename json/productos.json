@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Playadito",
+    "precio": 1978,
+    "categoria": "suave",
+    "imagen":"playadito.webp"
+  },
+  {
+    "id": 2,
+    "nombre": "Mañanita",
+    "precio": 1800,
+    "categoria": "suave",
+    "imagen":"Mañanita.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "La Union Suave",
+    "precio": 2000,
+    "categoria": "suave",
+    "imagen":"la unicon suave.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Chamigo",
+    "precio": 1600,
+    "categoria": "variadas",
+    "imagen":"chamigo.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "CBSE",
+    "precio": 1700,
+    "categoria": "variadas",
+    "imagen":"cbse.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Canarias",
+    "precio": 1500,
+    "categoria": "variadas",
+    "imagen":"canarias.png"
+  }
+]

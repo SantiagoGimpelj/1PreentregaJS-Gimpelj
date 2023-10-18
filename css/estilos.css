@@ -12,7 +12,7 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 4fr 0.5fr;
+  grid-template-rows: 1fr 7fr 1fr;
   grid-template-areas: "header header" "main main" "footer footer";
 }
 
@@ -21,34 +21,24 @@ header {
   grid-area: header;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 header #logo {
-  flex-basis: 40%;
+  flex-basis: 50%;
   color: white;
-  font-size: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+header #logo h1 {
   font-family: "Josefin Sans", sans-serif;
-}
-header #btnheader {
-  flex-basis: 20%;
+  font-size: 3rem;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
-}
-header #btnheader button {
-  background-color: blue;
-  color: white;
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 9px;
-  font-size: 1em;
 }
 header #contador {
   position: absolute;
@@ -61,13 +51,28 @@ header #contador {
   z-index: 1;
 }
 header #divcarrito {
-  flex-basis: 40%;
+  text-align: center;
+  flex-basis: 50%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   position: relative;
+}
+header #divcarrito #btncomprar {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  border-radius: 10px;
+  border: solid black 3px;
+  width: 30%;
+  margin-left: 36%;
+  margin-bottom: 10px;
+}
+header #divcarrito #btncomprar:hover {
+  background-color: rgb(79, 79, 151);
 }
 header #divcarrito img {
   width: 80px;
@@ -76,7 +81,6 @@ header #divcarrito img {
   position: relative;
 }
 header #divcarrito .divcarrito2 {
-  margin-left: 15px;
   background-color: beige;
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -93,6 +97,15 @@ header #divcarrito .offcanvas-header {
 header #divcarrito #carrito {
   background-color: beige;
 }
+header #divcarrito .productoCarrito {
+  background-color: white;
+  border-radius: 10px;
+  border: solid black 4px;
+  margin: 10px;
+  padding: 10px;
+  width: 70%;
+  margin-left: 65px;
+}
 header #divcarrito .productoCarrito img {
   margin: 10px;
   border: solid black 4px;
@@ -100,15 +113,17 @@ header #divcarrito .productoCarrito img {
 }
 header #divcarrito .productoCarrito h2 {
   display: flex;
+  font-size: 2rem;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
   padding: 5px;
-  background-color: bisque;
+  font-weight: 400;
+  background-color: blue;
+  color: white;
   border-radius: 10px;
-  border: solid black 2px;
+  border: solid black 3px;
 }
 header #divcarrito .btnquitar {
   text-decoration: none;
@@ -127,26 +142,82 @@ main {
   grid-area: main;
   display: flex;
   flex-wrap: wrap;
-  background-image: url("/assets/img/fondo/mate.jpg");
+  background-image: url("../assets/img/fondo/mate.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-main #section1 {
-  flex-basis: 50%;
+main #categorias {
+  flex-basis: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+main #categorias #listacategoria {
+  flex-grow: 1;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #categorias #listacategoria .boton.seleccionado {
+  border: 4px solid white;
+  background-color: #d15280;
+}
+main #categorias #listacategoria .boton {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 243);
+  border-radius: 10px;
+  border: solid 3px black;
+  color: azure;
+}
+main #categorias #listacategoria .boton a {
+  text-decoration: none;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+main #buscador {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
+}
+main #inputbuscar {
+  text-align: center;
+  width: 500px;
+  border: solid 3px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+main #section1 {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 50px;
 }
 main #section1 h3 {
-  margin-top: 5px;
+  background-color: blue;
+  border: solid black 3px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  color: white;
   font-size: 2rem;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 800;
-  padding: 10px;
-  background-color: bisque;
-  border-radius: 10px;
-  border: solid black 3px;
 }
 main #section1 .btnAgregar {
   background-color: rgb(0, 0, 243);
@@ -161,15 +232,22 @@ main #section1 .btnAgregar:hover {
 main #section1 .precio {
   font-weight: 700;
   font-size: 2rem;
-  font-family: "Roboto Condensed", sans-serif;
-  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  color: rgb(0, 0, 0);
+}
+main #section1 .producto {
+  text-align: center;
+  width: 250px;
+  height: 52vh;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid black 4px;
 }
 main #section1 img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: 10px;
-  border: solid black 4px;
-  border-radius: 10px;
 }
 main #section1 div {
   display: flex;
@@ -185,20 +263,24 @@ main #section1 a {
   font-family: "Roboto Condensed", sans-serif;
 }
 main #section2 {
-  flex-basis: 50%;
+  flex-basis: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
 }
 main #section2 h3 {
+  background-color: blue;
+  border: solid black 3px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  color: white;
   font-size: 2rem;
   font-family: "Roboto Condensed", sans-serif;
-  margin-top: 5px;
   font-weight: 800;
-  padding: 10px;
-  background-color: bisque;
-  border-radius: 10px;
-  border: solid black 3px;
 }
 main #section2 .btnAgregar2 {
   background-color: blue;
@@ -213,15 +295,20 @@ main #section2 .btnAgregar2:hover {
 main #section2 .precio {
   font-weight: 700;
   font-size: 2rem;
-  font-family: "Roboto Condensed", sans-serif;
-  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  color: rgb(0, 0, 0);
+}
+main #section2 .producto {
+  width: 250px;
+  height: 52vh;
+  text-align: center;
+  background-color: white;
+  border-radius: 20px;
+  border: solid black 4px;
 }
 main #section2 img {
-  width: 200px;
-  height: 200px;
-  margin: 10px;
-  border: solid black 4px;
-  border-radius: 10px;
+  width: 150px;
+  height: 150px;
 }
 main #section2 div {
   display: flex;
@@ -282,141 +369,6 @@ footer #aside img {
   border: solid rgb(0, 0, 0) 4px;
   border-radius: 10px;
   padding: 5px;
-}
-
-#bodylogin {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
-  grid-template-areas: "headerlogin" "mainlogin" "footerlogin";
-}
-#bodylogin #headerlogin {
-  grid-area: headerlogin;
-}
-#bodylogin #mainlogin {
-  grid-area: mainlogin;
-}
-#bodylogin #mainlogin #sectionlogin {
-  flex-basis: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1em;
-}
-#bodylogin #mainlogin #sectionlogin h2 {
-  text-align: center;
-  font-size: 2.5em;
-  width: 100%;
-  margin-bottom: 1em;
-}
-#bodylogin #mainlogin #sectionlogin p {
-  margin-top: 1.5em;
-}
-#bodylogin #mainlogin #sectionlogin p a {
-  text-decoration: none;
-  color: blue;
-}
-#bodylogin #mainlogin #loginform {
-  padding: 1.5em;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 500px;
-  border-radius: 20px;
-  border: solid 2px black;
-}
-#bodylogin #mainlogin #loginform label {
-  width: 100%;
-  padding: 0.2em;
-  margin-bottom: 0.5em;
-}
-#bodylogin #mainlogin #loginform input {
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 0.8em;
-  border-radius: 9px;
-  border: none;
-  outline-color: blue;
-  background-color: beige;
-}
-#bodylogin #mainlogin #sumbit1 {
-  margin-top: 1.5em;
-  color: rgb(0, 0, 0);
-}
-#bodylogin #mainlogin #sumbit1:hover {
-  background-color: blue;
-  color: white;
-}
-#bodylogin #footerlogin {
-  grid-area: footerlogin;
-}
-
-#bodysignup {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
-  grid-template-areas: "headersignup" "mainsignup" "footersignup";
-}
-#bodysignup #headersignup {
-  grid-area: headersignup;
-}
-#bodysignup #mainsignup {
-  grid-area: mainsignup;
-}
-#bodysignup #mainsignup #sectionsignup {
-  flex-basis: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1em;
-}
-#bodysignup #mainsignup #sectionsignup h2 {
-  text-align: center;
-  font-size: 2.5em;
-  width: 100%;
-  margin-bottom: 1em;
-}
-#bodysignup #mainsignup #sectionsignup p {
-  margin-top: 1.5em;
-}
-#bodysignup #mainsignup #sectionsignup p a {
-  text-decoration: none;
-  color: blue;
-}
-#bodysignup #mainsignup #signupform {
-  padding: 1.5em;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 500px;
-  border-radius: 20px;
-  border: solid 2px black;
-}
-#bodysignup #mainsignup #signupform label {
-  width: 100%;
-  padding: 0.2em;
-  margin-bottom: 0.5em;
-}
-#bodysignup #mainsignup #signupform input {
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 0.8em;
-  border-radius: 9px;
-  border: none;
-  outline-color: blue;
-  background-color: beige;
-}
-#bodysignup #mainsignup #sumbit2 {
-  color: black;
-}
-#bodysignup #mainsignup #sumbit2:hover {
-  background-color: blue;
-  color: white;
-}
-#bodysignup #footersignup {
-  grid-area: footersignup;
 }
 
 /*# sourceMappingURL=estilos.css.map */

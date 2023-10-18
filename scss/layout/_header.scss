@@ -3,34 +3,24 @@ header {
   grid-area: header;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   #logo {
-    flex-basis: 40%;
+    flex-basis: 50%;
     color: white;
-    font-size: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    font-family: $josefin;
   }
 
-  #btnheader {
-    flex-basis: 20%;
+  #logo h1 {
+    font-family: $josefin;
+    font-size: 3rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-  }
-  #btnheader button {
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 9px;
-    font-size: 1em;
   }
 
   #contador {
@@ -45,13 +35,30 @@ header {
   }
 
   #divcarrito {
-    flex-basis: 40%;
+    text-align: center;
+    flex-basis: 50%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
     position: relative;
+
+    #btncomprar{
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: white;
+      background-color: blue;
+      border-radius: 10px;
+      border: solid black 3px;
+      width: 30%;
+      margin-left: 36%;
+      margin-bottom: 10px;
+    }
+
+    #btncomprar:hover{
+      background-color: rgb(79, 79, 151);
+    }
 
     img {
       width: 80px;
@@ -61,7 +68,6 @@ header {
     }
 
     .divcarrito2 {
-      margin-left: 15px;
       background-color: beige;
       font-family: $robot;
     }
@@ -73,13 +79,23 @@ header {
       align-items: center;
     }
 
-   .offcanvas-header{
-    background-color: beige;
-    font-family: $josefin;
-   }
-
-    #carrito{
+    .offcanvas-header {
       background-color: beige;
+      font-family: $josefin;
+    }
+
+    #carrito {
+      background-color: beige;
+    }
+
+    .productoCarrito {
+      background-color: white;
+      border-radius: 10px;
+      border: solid black 4px;
+      margin: 10px;
+      padding: 10px;
+      width: 70%;
+      margin-left: 65px;
     }
 
     .productoCarrito img {
@@ -90,15 +106,17 @@ header {
 
     .productoCarrito h2 {
       display: flex;
+      font-size: 2rem;
       justify-content: center;
       align-items: center;
       margin-top: 5px;
-      font-family: $robot;
-      font-weight: 400;
+      font-family: $josefin;
       padding: 5px;
-      background-color: bisque;
+      font-weight: 400;
+      background-color: blue;
+      color: white;
       border-radius: 10px;
-      border: solid black 2px;
+      border: solid black 3px;
     }
 
     .btnquitar {

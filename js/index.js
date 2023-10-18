@@ -14,46 +14,32 @@ class BaseDeDatos {
     //array para el catalogo de productos
     this.productos = [];
     //cargar productos
-    this.agregarProducto(1, "Yerba Playadito", 1978, "Yerba", "playadito.webp");
-    this.agregarProducto(2, "Yerba Mañanita", 1800, "Yerba", "mañanita.webp");
-    this.agregarProducto(
-      3,
-      "Yerba La Union Suave",
-      2000,
-      "Yerba",
-      "la unicon suave.webp"
-    );
-    this.agregarProducto(4, "Yerba Chamigo", 1600, "Yerba", "chamigo.webp");
-    this.agregarProducto(5, "Yerba CBSE", 1700, "Yerba", "cbse.webp");
-    this.agregarProducto(6, "Yerba Canarias", 1500, "Yerba", "canarias.png");
+    this.agregarProductos();
 
     //creo otro array para otra section
     this.productos2 = [];
     //creo productos para otro array
-    this.agregarProducto2(7, "Yerba Amanda", 1900, "Yerba", "Amanda.jpg");
-    this.agregarProducto2(8, "Yerba Amanda Tradicional", 1899, "Yerba", "amandatradicional.webp");
-    this.agregarProducto2(9, "Yerba Taragui", 1800, "Yerba", "taragui.webp");
-    this.agregarProducto2(10, "Yerba Rosamonte Suave", 2000, "Yerba", "rosamontesuave.jpg");
-    this.agregarProducto2(11, "Yerba Rosamonte terere", 1700, "Yerba", "rosamontetere.jpg");
-    this.agregarProducto2(12, "Yerba Rosamonte Sin Palo", 2100, "Yerba", "rosamontesinpalo.jpg");
+    this.agregarProductos2();
   }
 
-  //crea el producto y lo muestra en el catalogo
-  agregarProducto(id, nombre, precio, categoria, imagen) {
-    const producto = new Producto(id, nombre, precio, categoria, imagen);
-    this.productos.push(producto);
+  //crea el productos y los muestra en el catalogo con fetch
+  async agregarProductos() {
+    const resultado = await fetch("./json/productos.json");
+    this.productos = await resultado.json();
+    cargarProductos(this.productos);
   }
 
-  agregarProducto2(id, nombre, precio, categoria, imagen) {
-    const producto2 = new Producto(id, nombre, precio, categoria, imagen);
-    this.productos2.push(producto2);
+  async agregarProductos2() {
+    const resultado2 = await fetch("./json/productos2.json");
+    this.productos2 = await resultado2.json();
+    cargarProductos2(this.productos2);
   }
 
   //nos da el catalogo de productos
   traerProductos() {
     return this.productos;
   }
-  //segundo catalogo
+  // egundo catalogos
   traerProductos2() {
     return this.productos2;
   }
@@ -70,13 +56,23 @@ class BaseDeDatos {
   //buscador
   productosPorNombre(palabra) {
     return this.productos.filter((producto) =>
-      producto.nombre.tolowercase().includes(palabra.tolowercase())
+      producto.nombre.toLowerCase().includes(palabra.toLowerCase())
+    );
+  }
+  //
+  productosPorNombre2(palabra) {
+    return this.productos2.filter((producto) =>
+      producto.nombre.toLowerCase().includes(palabra.toLowerCase())
     );
   }
 
-  productosPorNombre2(palabra) {
-    return this.productos2.filter((producto) =>
-      producto.nombre.tolowercase().includes(palabra.tolowercase())
+  productosPorCategoria(categoria) {
+    return this.productos.filter((producto) => producto.categoria == categoria);
+  }
+
+  productosPorCategoria2(categoria) {
+    return this.productos2.filter(
+      (producto) => producto.categoria == categoria
     );
   }
 }
@@ -128,6 +124,14 @@ class carrito {
     this.listar();
   }
 
+  vaciar() {
+    this.total = 0;
+    this.cantidadProductos = 0;
+    this.carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(this.carrito));
+    this.listar();
+  }
+
   //listado de los productos en el carrito
   listar() {
     //reinicio las variables
@@ -148,6 +152,12 @@ class carrito {
       //actualizo los totales
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
+    }
+
+    if (this.cantidadProductos > 0) {
+      btnComprar.style.display = "block";
+    } else {
+      btnComprar.style.display = "none";
     }
 
     const botonesQuitar = document.querySelectorAll(".btnquitar");
@@ -173,9 +183,36 @@ const spanTotalCarrito = document.querySelector("#totalcarrito");
 const sectionProductos1 = document.querySelector("#section1");
 const sectionProductos2 = document.querySelector("#section2");
 const divcarrito = document.querySelector("#carrito");
+const inputBuscar = document.querySelector("#inputbuscar");
+const btnComprar = document.querySelector("#btncomprar");
+const botonesCategoria = document.querySelectorAll(".btncategoria");
 
 //llamamos la clase carrito
 const Carrito = new carrito();
+
+//boton para llamar a los productos por categoria
+botonesCategoria.forEach((boton) => {
+  boton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const categoria = boton.dataset.categoria;
+
+    //sacar el seleccionado
+    const botonSeleccionado = document.querySelector(".seleccionado");
+    botonSeleccionado.classList.remove("seleccionado");
+
+    //se lo agrego al boton
+    boton.classList.add("seleccionado");
+
+    //si categoria es iguala todos muestra todos los producos
+    if (categoria == "Todos") {
+      cargarProductos(bd.traerProductos());
+      cargarProductos2(bd.traerProductos2());
+    } else {
+      cargarProductos(bd.productosPorCategoria(categoria));
+      cargarProductos2(bd.productosPorCategoria2(categoria));
+    }
+  });
+});
 
 //LLamo a las listas de productos al hmtl
 cargarProductos(bd.traerProductos());
@@ -214,11 +251,20 @@ function cargarProductos(productos) {
 
       //agrega al carrito
       Carrito.agregar(producto);
+      //tostify
+      Toastify({
+        text: `Se ha añadido ${producto.nombre} al carrito`,
+        gravity: "bottom",
+        position: "center",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
     });
   }
 }
 
-//funtion para la section2
+// //funtion para la section2
 function cargarProductos2(productos2) {
   sectionProductos2.innerHTML = "";
 
@@ -250,6 +296,50 @@ function cargarProductos2(productos2) {
 
       //agrega al carrito
       Carrito.agregar(producto2);
+      Toastify({
+        text: `Se ha añadido ${producto2.nombre} al carrito`,
+        gravity: "bottom",
+        position: "center",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
     });
   }
 }
+
+//buscador
+inputBuscar.addEventListener("input", (event) => {
+  event.preventDefault();
+  const palabra = inputBuscar.value;
+  const productos = bd.productosPorNombre(palabra);
+  cargarProductos(productos);
+  const palabra2 = inputBuscar.value;
+  const productos2 = bd.productosPorNombre2(palabra2);
+  cargarProductos2(productos2);
+});
+
+//boton comprar
+btnComprar.addEventListener("click", (event) => {
+  event.preventDefault();
+  
+  Swal.fire({
+    title: '¿Estas seguro de comprar estos productos?',
+    // text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, estoy seguro!',
+    cancelButtonText:'No, no quiero'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Carrito.vaciar();
+      Swal.fire(
+        'Su compra se realizo con exito',
+        'Felicidades',
+        'success'
+      )
+    }
+  })
+});

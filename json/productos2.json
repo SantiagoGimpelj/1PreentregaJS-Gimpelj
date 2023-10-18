@@ -1,0 +1,44 @@
+[
+  {
+    "id": 7,
+    "nombre": "Amanda Suave",
+    "precio": 1900,
+    "categoria": "suave",
+    "imagen": "Amanda.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Amanda Tradicional",
+    "precio": 1899,
+    "categoria": "variadas",
+    "imagen": "amandatradicional.webp"
+  },
+  {
+    "id": 9,
+    "nombre": "Taragui",
+    "precio": 1800,
+    "categoria": "variadas",
+    "imagen": "taragui.webp"
+  },
+  {
+    "id": 10,
+    "nombre": "Rosamonte Suave",
+    "precio": 2000,
+    "categoria": "suave",
+    "imagen": "rosamontesuave.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Rosamonte terere",
+    "precio": 1700,
+    "categoria": "especiales",
+    "imagen": "rosamontetere.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Rosamonte Sin Palo",
+    "precio": 2100,
+    "categoria": "especiales",
+    "imagen": "rosamontesinpalo.jpg"
+  }
+]
