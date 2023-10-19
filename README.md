@@ -1,6 +1,6 @@
-# 3PreentregaJS-Gimpelj
-agregue un carrito despegable y le puse un contador para que el usuario sepa donde estan sus productos.
-modifique la pagina y le di un poco ams de estilos pero en la entrega final tengo pensado tambien emterle un login.
+# ProyectoFinal Distribuidora Yerba Mate PS
+Les presento mi pagina web de Distribuidora Yerba Mate PS
+#Esta pagina se trata de un ecommerce de yerbas en el cual le permite al usuario comprar los prodductos que desee.
 
 #Librerias que utilize:
 .Boostrap
@@ -9,6 +9,5 @@ modifique la pagina y le di un poco ams de estilos pero en la entrega final teng
 
 #Lenguajes que utilize:
 .HTML
-.CSS
 .SASS
 .JS
